@@ -1,0 +1,545 @@
+/* Color Palette & Fonts - New Theme (White Background) */
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --background-color: #000000; /* Pure white for main background */
+    --text-color: #ffffff; /* Dark grey for general text on white background */
+    --heading-color: white; /* Vibrant pink/red for headings and accents */
+    --accent-color: #e94560; /* Consistent accent color */
+    --accent-dark: #b33951; /* Darker shade of accent for hover */
+    --card-bg: #190f0f; /* White for cards */
+    --border-color: #220c0c; /* Light grey for subtle borders */
+    --shadow-subtle: rgba(0, 0, 0, 0.08); /* Lighter shadow for white background */
+    --shadow-soft: rgba(0, 0, 0, 0.12); /* Lighter shadow for white background */
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    line-height: 1.7;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+h1, h2, h3 {
+    font-family: var(--primary-font);
+    color: var(--heading-color);
+    font-weight: 700;
+    margin-bottom: 0.8em;
+}
+
+h2.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* Header */
+.header {
+    background: var(--card-bg); /* Now white, consistent with main background */
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+    font-size: 3em;
+    margin-bottom: 8px;
+    color: var(--heading-color); /* Now accent color */
+    text-shadow: none; /* Remove soft glow for light background */
+}
+
+.tagline {
+    font-size: 1.15em;
+    color: var(--text-color); /* Dark text on white header */
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color); /* Dark text on white header */
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Main Sections */
+.section {
+    padding: 100px 0;
+    margin-bottom: 0;
+    background-color: var(--background-color); /* All sections will have white background */
+    box-shadow: none; /* Remove inner shadow for a cleaner look on white */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+/* About Section */
+.section-about {
+    padding-top: 80px;
+    background-color: var(--card-bg); /* White background */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.profile-photo-container {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-soft);
+    border: 5px solid var(--accent-color);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: var(--text-color); /* Dark text on white background */
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skill-item {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-subtle);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: var(--accent-dark);
+    box-shadow: 0 8px 20px var(--shadow-soft);
+}
+
+/* Projects Section */
+.project-card {
+    background-color: var(--card-bg); /* White background for card */
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow-soft);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-left: 8px solid var(--accent-color);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px var(--shadow-soft);
+}
+
+.project-card h3 {
+    color: var(--heading-color); /* Accent color for title */
+    font-size: 2em;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    margin-bottom: 18px;
+    font-size: 1.1em;
+    color: var(--text-color); /* Dark text on white background */
+}
+
+.tech-used {
+    font-style: italic;
+    color: #606060; /* Darker grey for tech for better contrast on white */
+    font-size: 0.95em;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.project-link i {
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.project-link:hover {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+
+/* Contact Section - Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--card-bg); /* White background for social icons */
+    color: var(--accent-color); /* Accent color for icons */
+    border-radius: 50%;
+    font-size: 2.2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-subtle);
+    border: 1px solid var(--border-color);
+}
+
+.social-link:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px var(--shadow-soft);
+}
+
+/* Footer */
+.footer {
+    background: var(--heading-color); /* Accent color for footer */
+    color: #9b0000;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1em;
+    box-shadow: 0 -4px 15px var(--shadow-soft);
+}
+
+/* Floating WhatsApp Icon */
+.whatsapp-float {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    background-color: #25D366;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2.8em;
+    line-height: 65px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.15);
+    background-color: #1DA851;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    .profile-photo-container {
+        flex-shrink: 0;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+
+    h2.section-title {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    h2.section-title::after {
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+    /* Hide hamburger icon on desktop */
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 20px 0;
+        position: relative;
+    }
+
+    .site-title {
+        font-size: 2.5em;
+    }
+
+    .tagline {
+        font-size: 1.05em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+        align-items: center;
+    }
+
+    .main-nav a {
+        font-size: 1.1em;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    h2.section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    h2.section-title::after {
+        width: 60px;
+        height: 4px;
+    }
+
+    .profile-photo-container {
+        width: 160px;
+        height: 160px;
+    }
+
+    .about-text p {
+        font-size: 1em;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+
+    .project-card h3 {
+        font-size: 1.7em;
+    }
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 2.2em;
+        line-height: 55px;
+        bottom: 25px;
+        right: 25px;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+    }
+
+    /* Hamburger Menu Styles */
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 35px;
+        height: 28px;
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+
+    .hamburger-icon,
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color); /* Dark hamburger lines on white header */
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger-icon::before {
+        transform: translateY(-9px);
+    }
+
+    .hamburger-icon::after {
+        transform: translateY(9px);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label .hamburger-icon {
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label .hamburger-icon::before {
+        transform: translateY(0) rotate(90deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label .hamburger-icon::after {
+        transform: translateY(0) rotate(90deg);
+        opacity: 0;
+    }
+
+    /* Main Navigation (mobile specific) */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100%;
+        background-color: var(--card-bg); /* Now white menu */
+        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.2); /* Lighter shadow for white menu */
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--border-color); /* Light border on white menu */
+    }
+
+    .main-nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav a {
+        display: block;
+        font-size: 1.3em;
+        color: var(--text-color); /* Dark text on white menu */
+        padding: 10px 0;
+    }
+
+    .nav-toggle:checked ~ .main-nav {
+        right: 0;
+    }
+}
